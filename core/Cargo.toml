@@ -9,4 +9,5 @@ path = "src/lib.rs"
 
 [dependencies]
 defmt = { workspace = true }
+bitflags = { workspace = true }
 

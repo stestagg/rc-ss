@@ -1300,6 +1300,7 @@ checksum = "99d9a13982dcf210057a8a78572b2217b667c3beacbf3a0d8b454f6f82837d38"
 name = "rc-core"
 version = "0.1.0"
 dependencies = [
+ "bitflags 2.9.1",
  "defmt 1.0.1",
 ]
 
