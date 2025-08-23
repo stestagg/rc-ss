@@ -15,6 +15,7 @@ It contains three crates:
   - PWM (50hz, 1 <-> 2 ms pulse for full range) for an ESC (throttle) and a servo (steering), use MCPWM to drive this.
   - Additional outputs such as headlights may be added later.
 - Implement a failsafe: if the receiver does not get packets for a short period it must enter a neutral/stop state.
+- Using embassy for async task based processing
 
 ## Coding Conventions
 - Rust edition 2024, `no_std` throughout.
