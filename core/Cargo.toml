@@ -1,0 +1,12 @@
+[package]
+name = "rc-core"
+version = "0.1.0"
+edition = "2021"
+authors = ["rc-ss"]
+
+[lib]
+path = "src/lib.rs"
+
+[dependencies]
+defmt = { workspace = true }
+
