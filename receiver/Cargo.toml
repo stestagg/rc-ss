@@ -1,7 +1,7 @@
 [package]
 name = "receiver"
 version = "0.1.0"
-edition = "2021"
+edition = "2024"
 build = "../build.rs"
 
 [dependencies]
@@ -15,5 +15,5 @@ esp-hal-embassy = { workspace = true }
 panic-rtt-target = { workspace = true }
 rtt-target = { workspace = true }
 static_cell = { workspace = true }
-esp-ieee802154 = { workspace = true }
+esp-radio = { workspace = true }
 

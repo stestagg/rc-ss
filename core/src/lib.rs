@@ -13,14 +13,31 @@ use defmt::Format;
 /// 4    flags     u8  (bit 0 = headlight)
 /// 5    checksum  u8  (sum of bytes 0-4, wrapping)
 /// ```
+
+#[derive(Copy, Clone, PartialEq, Eq)]
+pub struct ControlFlags(u8);
+
+
 bitflags! {
-    #[derive(Format)]
-    pub struct ControlFlags: u8 {
+    impl ControlFlags: u8 {
         /// Headlight toggle.
         const HEADLIGHT = 0x01;
     }
 }
-#[derive(Clone, Copy, Format)]
+
+impl defmt::Format for ControlFlags {
+    fn format(&self, f: defmt::Formatter) {
+        let mut have_one = false;
+        defmt::write!(f, "ControlFlags(");
+        if self.contains(Self::HEADLIGHT) {
+            defmt::write!(f, "HEADLIGHT");
+            have_one = true;
+        }
+        defmt::write!(f, ")");
+    }
+}
+
+#[derive(Copy, Clone, Format)]
 pub struct ControlPacket {
     /// Throttle position.
     pub throttle: i16,
