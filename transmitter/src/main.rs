@@ -11,10 +11,7 @@ use rc_core::ControlPacket;
 async fn main(_spawner: Spawner) {
     rtt_target::rtt_init_defmt!();
     info!("transmitter boot");
-    let _ = ControlPacket {
-        throttle: 0,
-        steering: 0,
-    };
+    let _ = ControlPacket::FAILSAFE;
     loop {
         Timer::after(Duration::from_secs(1)).await;
     }
