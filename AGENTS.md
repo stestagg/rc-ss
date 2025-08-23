@@ -12,12 +12,12 @@ It contains three crates:
 - Define a simple, reliable control protocol in the `core` crate and reuse it everywhere to avoid duplication.
 - The transmitter reads two analogue sticks and any buttons, packages state into control packets and sends them at a fixed rate.
 - The receiver decodes control packets and drives hardware:
-  - PWM for an ESC (throttle) and a servo (steering).
+  - PWM (50hz, 1 <-> 2 ms pulse for full range) for an ESC (throttle) and a servo (steering), use MCPWM to drive this.
   - Additional outputs such as headlights may be added later.
 - Implement a failsafe: if the receiver does not get packets for a short period it must enter a neutral/stop state.
 
 ## Coding Conventions
-- Rust edition 2021, `no_std` throughout.
+- Rust edition 2024, `no_std` throughout.
 - Keep the code simple and explicit; minimise clever abstractions.
 - Share logic through the `core` crate rather than duplicating code.
 - Use `defmt` for logging; avoid `println!`/`debug!` etc.
