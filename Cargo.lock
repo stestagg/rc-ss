@@ -359,7 +359,6 @@ checksum = "f820157f198ada183ad62e0a66f554c610cdcd1a9f27d4b316358103ced7a1f8"
 dependencies = [
  "cfg-if",
  "critical-section",
- "defmt 0.3.100",
  "document-features",
  "embassy-time-driver",
  "embedded-hal 0.2.7",
@@ -1137,6 +1136,9 @@ version = "0.1.0"
 dependencies = [
  "bitflags 2.9.1",
  "defmt 1.0.1",
+ "embassy-futures",
+ "esp-hal 1.0.0-rc.0",
+ "esp-ieee802154",
 ]
 
 [[package]]
@@ -1146,7 +1148,6 @@ dependencies = [
  "critical-section",
  "defmt 1.0.1",
  "embassy-executor",
- "embassy-time",
  "esp-bootloader-esp-idf",
  "esp-hal",
  "esp-hal-embassy",
@@ -1388,7 +1389,6 @@ dependencies = [
  "critical-section",
  "defmt 1.0.1",
  "embassy-executor",
- "embassy-time",
  "esp-bootloader-esp-idf",
  "esp-hal",
  "esp-hal-embassy",

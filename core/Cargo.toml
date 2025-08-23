@@ -10,4 +10,7 @@ path = "src/lib.rs"
 [dependencies]
 defmt = { workspace = true }
 bitflags = { workspace = true }
+esp-hal = { workspace = true }
+esp-ieee802154 = { workspace = true }
+embassy-futures = { workspace = true }
 

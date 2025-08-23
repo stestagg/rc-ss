@@ -11,10 +11,9 @@ esp-bootloader-esp-idf = { workspace = true }
 esp-hal = { workspace = true }
 critical-section = { workspace = true }
 embassy-executor = { workspace = true }
-embassy-time = { workspace = true }
 esp-hal-embassy = { workspace = true }
 panic-rtt-target = { workspace = true }
 rtt-target = { workspace = true }
 static_cell = { workspace = true }
+embassy-futures = { workspace = true }
 esp-radio = { workspace = true }
-
