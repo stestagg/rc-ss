@@ -32,10 +32,18 @@ esp-bootloader-esp-idf = { version = "0.2.0", features = ["esp32h2"] }
 esp-hal = { version = "=1.0.0-rc.0", features = ["defmt", "esp32h2", "unstable"] }
 critical-section = "1.2.0"
 embassy-executor = { version = "0.7.0", features = ["defmt", "task-arena-size-20480"] }
-embassy-time = { version = "0.4.0", features = ["defmt"] }
 esp-hal-embassy = { version = "0.9.0", features = ["defmt", "esp32h2"] }
 panic-rtt-target = { version = "0.2.0", features = ["defmt"] }
 rtt-target = { version = "0.6.1", features = ["defmt"] }
 static_cell = "2.1.1"
-esp-ieee802154 = { git = "https://github.com/esp-rs/esp-ieee802154", default-features = false, features = ["esp32h2"] }
+esp-radio = { git = "https://github.com/esp-rs/esp-hal", package = "esp-radio", default-features = false, features = ["esp32h2", "ieee802154", "defmt", "unstable"] }
+esp-alloc = { version = "0.8.0" }
 bitflags = { version = "2", default-features = false }
+embassy-futures = "0.1.1"
+
+[patch.crates-io]
+esp-rom-sys = { git = "https://github.com/esp-rs/esp-hal", package = "esp-rom-sys" }
+esp-riscv-rt = { git = "https://github.com/esp-rs/esp-hal", package = "esp-riscv-rt" }
+xtensa-lx-rt = { git = "https://github.com/esp-rs/esp-hal", package = "xtensa-lx-rt" }
+esp-hal = { git = "https://github.com/esp-rs/esp-hal", package = "esp-hal" }
+esp-hal-embassy = { git = "https://github.com/esp-rs/esp-hal", package = "esp-hal-embassy" }

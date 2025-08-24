@@ -14,10 +14,16 @@ use defmt::Format;
 /// 5    checksum  u8  (sum of bytes 0-4, wrapping)
 /// ```
 bitflags! {
-    #[derive(Format)]
+    #[derive(Clone, Copy)]
     pub struct ControlFlags: u8 {
         /// Headlight toggle.
         const HEADLIGHT = 0x01;
+    }
+}
+
+impl Format for ControlFlags {
+    fn format(&self, f: defmt::Formatter) {
+        defmt::write!(f, "{=u8}", self.bits());
     }
 }
 #[derive(Clone, Copy, Format)]
@@ -97,3 +103,5 @@ impl ControlPacket {
         }
     }
 }
+
+pub mod radio;
