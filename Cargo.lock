@@ -674,7 +674,8 @@ dependencies = [
 [[package]]
 name = "esp-wifi-sys"
 version = "0.7.1"
-source = "git+https://github.com/stestagg/esp-wifi-sys#99dd43f9992b276efff3c75467839801e7ea55c7"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "c6b5438361891c431970194a733415006fb3d00b6eb70b3dcb66fd58f04d9b39"
 dependencies = [
  "anyhow",
 ]
@@ -1137,8 +1138,7 @@ dependencies = [
  "bitflags 2.9.1",
  "defmt 1.0.1",
  "embassy-futures",
- "esp-hal 1.0.0-rc.0",
- "esp-ieee802154",
+ "esp-hal",
 ]
 
 [[package]]
@@ -1389,6 +1389,7 @@ dependencies = [
  "critical-section",
  "defmt 1.0.1",
  "embassy-executor",
+ "embassy-futures",
  "esp-bootloader-esp-idf",
  "esp-hal",
  "esp-hal-embassy",

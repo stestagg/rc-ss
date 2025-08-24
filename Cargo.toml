@@ -42,6 +42,6 @@ esp-radio = { git = "https://github.com/esp-rs/esp-hal", package = "esp-radio", 
 bitflags = { version = "2", default-features = false }
 embassy-futures = "0.1.1"
 
-[patch.crates-io]
-esp-wifi-sys = { git = "https://github.com/stestagg/esp-wifi-sys", features=["esp32h2"]  }
+# [patch.crates-io]
+# esp-wifi-sys = { git = "https://github.com/stestagg/esp-wifi-sys", features=["esp32h2"]  }
 
