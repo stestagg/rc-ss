@@ -8,7 +8,7 @@ It contains three crates:
 - `receiver` – binary that runs on the vehicle.
 
 ## Architecture & Goals
-- Use raw 802.15.4 via [`esp-radio`](https://github.com/esp-rs/esp-radio) for all radio communication.
+- Use raw 802.15.4 via [`esp-radio`](https://github.com/esp-rs/esp-hal/tree/main/esp-radio) for all radio communication.
 - Define a simple, reliable control protocol in the `core` crate and reuse it everywhere to avoid duplication.
 - The transmitter reads two analogue sticks and any buttons, packages state into control packets and sends them at a fixed rate.
 - The receiver decodes control packets and drives hardware:
