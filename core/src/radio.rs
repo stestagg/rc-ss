@@ -1,6 +1,6 @@
 use embassy_futures::yield_now;
-use esp_hal::peripherals::{IEEE802154, RADIO_CLK};
-use esp_ieee802154::{Config, Error, Ieee802154};
+use esp_hal::peripherals::IEEE802154;
+use esp_radio::ieee802154::{Config, Error, Ieee802154};
 
 use crate::ControlPacket;
 
@@ -12,8 +12,8 @@ pub struct Radio<'a> {
 
 impl<'a> Radio<'a> {
     /// Initialise the radio with default configuration and start receiving.
-    pub fn new(radio: IEEE802154, radio_clocks: &mut RADIO_CLK) -> Self {
-        let mut inner = Ieee802154::new(radio, radio_clocks);
+    pub fn new(radio: IEEE802154<'a>) -> Self {
+        let mut inner = Ieee802154::new(radio);
         inner.set_config(Config::default());
         inner.start_receive();
         Self { inner }
@@ -29,7 +29,7 @@ impl<'a> Radio<'a> {
     /// Receive the next valid [`ControlPacket`].
     pub async fn receive(&mut self) -> ControlPacket {
         loop {
-            if let Some(raw) = self.inner.get_raw_received() {
+            if let Some(raw) = self.inner.raw_received() {
                 let len = raw.data[0] as usize;
                 if len >= ControlPacket::LEN {
                     let mut buf = [0u8; ControlPacket::LEN];

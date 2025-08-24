@@ -12,4 +12,5 @@ defmt = { workspace = true }
 bitflags = { workspace = true }
 esp-hal = { workspace = true }
 embassy-futures = { workspace = true }
+esp-radio = { workspace = true }
 

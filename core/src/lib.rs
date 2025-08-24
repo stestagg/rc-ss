@@ -27,11 +27,9 @@ bitflags! {
 
 impl defmt::Format for ControlFlags {
     fn format(&self, f: defmt::Formatter) {
-        let mut have_one = false;
         defmt::write!(f, "ControlFlags(");
         if self.contains(Self::HEADLIGHT) {
             defmt::write!(f, "HEADLIGHT");
-            have_one = true;
         }
         defmt::write!(f, ")");
     }

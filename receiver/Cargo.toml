@@ -16,3 +16,4 @@ panic-rtt-target = { workspace = true }
 rtt-target = { workspace = true }
 static_cell = { workspace = true }
 esp-radio = { workspace = true }
+esp-alloc = { workspace = true }
