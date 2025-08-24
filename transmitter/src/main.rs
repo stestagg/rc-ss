@@ -4,7 +4,7 @@
 use defmt::info;
 use embassy_executor::Spawner;
 use embassy_futures::yield_now;
-use esp_hal::peripherals::Peripherals;
+use esp_alloc as _;
 use panic_rtt_target as _;
 use rc_core::{radio::Radio, ControlPacket};
 
@@ -13,10 +13,10 @@ async fn main(_spawner: Spawner) {
     rtt_target::rtt_init_defmt!();
     info!("transmitter boot");
 
-    let mut peripherals = Peripherals::take();
+    let peripherals = esp_hal::init(esp_hal::Config::default());
+    esp_alloc::heap_allocator!(size: 24 * 1024);
     let ieee = peripherals.IEEE802154;
-    let mut radio_clk = peripherals.RADIO_CLK;
-    let mut radio = Radio::new(ieee, &mut radio_clk);
+    let mut radio = Radio::new(ieee);
 
     let pkt = ControlPacket::FAILSAFE;
 

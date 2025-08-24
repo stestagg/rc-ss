@@ -486,6 +486,19 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "877a4ace8713b0bcf2a4e7eec82529c029f1d0619886d18145fea96c3ffe5c0f"
 
 [[package]]
+name = "esp-alloc"
+version = "0.8.0"
+source = "git+https://github.com/esp-rs/esp-hal#522ff0bb7322e8aa57f791a14b2fd5da12e76790"
+dependencies = [
+ "allocator-api2",
+ "cfg-if",
+ "critical-section",
+ "document-features",
+ "enumset",
+ "linked_list_allocator",
+]
+
+[[package]]
 name = "esp-bootloader-esp-idf"
 version = "0.2.0"
 source = "git+https://github.com/esp-rs/esp-hal#522ff0bb7322e8aa57f791a14b2fd5da12e76790"
@@ -943,6 +956,12 @@ dependencies = [
 ]
 
 [[package]]
+name = "linked_list_allocator"
+version = "0.10.5"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "9afa463f5405ee81cdb9cc2baf37e08ec7e4c8209442b5d72c04cfb2cd6e6286"
+
+[[package]]
 name = "litrs"
 version = "0.4.2"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -1139,6 +1158,7 @@ dependencies = [
  "defmt 1.0.1",
  "embassy-futures",
  "esp-hal",
+ "esp-radio",
 ]
 
 [[package]]
@@ -1148,6 +1168,7 @@ dependencies = [
  "critical-section",
  "defmt 1.0.1",
  "embassy-executor",
+ "esp-alloc",
  "esp-bootloader-esp-idf",
  "esp-hal",
  "esp-hal-embassy",
@@ -1390,6 +1411,7 @@ dependencies = [
  "defmt 1.0.1",
  "embassy-executor",
  "embassy-futures",
+ "esp-alloc",
  "esp-bootloader-esp-idf",
  "esp-hal",
  "esp-hal-embassy",

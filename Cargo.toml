@@ -41,6 +41,7 @@ static_cell = "2.1.1"
 esp-radio = { git = "https://github.com/esp-rs/esp-hal", package = "esp-radio", default-features = false, features=["ieee802154", "esp32h2", "unstable"] }
 bitflags = { version = "2", default-features = false }
 embassy-futures = "0.1.1"
+esp-alloc = { git = "https://github.com/esp-rs/esp-hal", package = "esp-alloc" }
 
 # [patch.crates-io]
 # esp-wifi-sys = { git = "https://github.com/stestagg/esp-wifi-sys", features=["esp32h2"]  }

@@ -17,3 +17,4 @@ rtt-target = { workspace = true }
 static_cell = { workspace = true }
 embassy-futures = { workspace = true }
 esp-radio = { workspace = true }
+esp-alloc = { workspace = true }
